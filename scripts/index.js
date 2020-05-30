@@ -12,7 +12,7 @@ const date = document.querySelector('.date-now');
 const container = document.querySelector('.container');
 
 
-//UI.updateTask(3);
+
 //Page will display if there is an existing Task.
 window.addEventListener('DOMContentLoaded', UI.displayTask);
 window.addEventListener('DOMContentLoaded', UI.getCurrentDate());
