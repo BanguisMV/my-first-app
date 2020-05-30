@@ -23,9 +23,6 @@
         align-items: center;
         justify-content: space-around;
 
-        &-reverse {
-            margin-left: 1rem;
-        }
 
     }
 
@@ -93,6 +90,11 @@
             }
 
             h2 {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                width:15rem;
+
                 font-size: 2rem;
             }
         }
@@ -116,6 +118,8 @@
             flex-direction: column;
             display: flex;
             margin: 1rem 0;
+            
+      
         }
 
 
@@ -130,13 +134,12 @@
             }
 
         }
-
     }
 }
 
 
-.fa-pencil:hover {
-    color: white;
+.fa-check:hover {
+    color: green;
     transform: scale(1.2);
 }
 
@@ -146,7 +149,7 @@
 }
 
 .clear {
-    background-color: var(--color4);
+    background-color: var(--color2);
     padding: .2rem 5rem;
     border-radius: 5rem;
     margin: 4rem;
@@ -155,6 +158,12 @@
     &-button {
         display: inline-block;
         text-align: center;
+
+        img {
+            width: 3rem;
+            height: 3rem;
+            padding: .5rem 0;
+        }
     }
 
     &:hover {

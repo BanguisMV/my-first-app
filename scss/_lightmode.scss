@@ -1,0 +1,26 @@
+.lightmode {
+    background-color: var(--lightmodeBG);
+
+    &-cards {
+        background-color: var(--lightmodeCards);
+        h2 {
+            color: var(--lightColor1);
+        }
+
+        p {
+            color: var(--lightColor1);
+        }
+    }
+
+    &-colors {
+        color: var(--lightmodeCards);
+    }
+
+    h1 {
+        color: var(--lightmodeCards);
+    }
+
+    i {
+        color: var(--lightColor1);
+    }
+}
