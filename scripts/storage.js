@@ -236,9 +236,6 @@ class Storage {
             taskCard.forEach(card => {
                 card.style.display = 'none';
             });
-
-            console.log(taskList)
-            console.log(taskList.parentElement.classList)
             setTimeout(() => {
                 taskList.style.display = 'none';
             }, 2000)
