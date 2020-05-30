@@ -87,7 +87,6 @@ class UI {
             const myTask = new Task(task, deadline, data.length + 1);
             Storage.addTask(myTask);
             UI.addTask(myTask);
-            console.log(myTask)
             //clearing
             document.getElementById('task').value = null;
             document.getElementById('deadline-input').value = 'Monday';
