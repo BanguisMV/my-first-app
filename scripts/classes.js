@@ -30,22 +30,23 @@ class Storage {
         let taskList = document.querySelector('.taskList');
         let taskCard = document.querySelector('.tasks');
         if (confirm(`ARE YOU SURE?`)) {
-            localStorage.clear();
+
+            localStorage.removeItem('tasks');
 
             //taskList.parentElement.style.display = 'none';
             //taskList.style.display = 'block';
-            
+
             //removing all cards
 
-                taskCard.textContent = 'Cleared';
-                taskCard.style.color = '#e2a3a3'
-                taskCard.style.fontSize = '5rem'
-                taskCard.classList = 'fadeOutUp';
+            taskCard.textContent = 'Cleared';
+            taskCard.style.color = '#e2a3a3'
+            taskCard.style.fontSize = '5rem'
+            taskCard.classList = 'fadeOutUp';
 
-                setTimeout(() => {
-                    taskCard.style.display = 'none';
-                    location.reload();
-                }, 1000)
+            setTimeout(() => {
+                taskCard.style.display = 'none';
+                location.reload();
+            }, 1000)
         }
     }
 
@@ -56,10 +57,7 @@ class Storage {
 //UI Class 
 class UI {
     static showTask() {
-        form.style.display = 'flex';
-        form.addEventListener('blur', () => {
-            form.style.display = 'none';
-        });
+        form.classList.toggle("flex");
     }
     static displayTask() {
 
@@ -143,7 +141,7 @@ class UI {
             document.getElementById('deadline-input').value = 'Monday';
             form.style.display = 'none';
 
-            location.reload();
+           location.reload();
         } else {
             alert('Provide task title.');
         }
@@ -209,7 +207,9 @@ class UI {
     }
     static toggle() {
         const cards = document.getElementById("cards");
-        cards.classList.toggle("reverse-column");
+
+        cards.classList.toggle("bounceIn");
+        //cards.classList.toggle("reverse-column");
     }
     static getCurrentDay(day) {
         let weekday = new Array(7);
@@ -254,34 +254,46 @@ class UI {
         currentTime.textContent = ` ${currentDay.toLocaleTimeString()}`;
 
     }
-    static changeColor() {
-
-        const cards = document.querySelectorAll('.tasks-cards');
-        //setting colors
-        document.body.classList.toggle("lightmode");
-        container.classList.toggle("lightmode");
-        date.classList.toggle("lightmode-colors");
-        clear.classList.toggle("lightmode-cards");
-        header.classList.toggle("lightmode-colors");
-
-        //condition for buttons svg's
-        if (container.classList.contains('lightmode')) {
-            add.src = `/icons/add.svg`
-            reverse.src = `/icons/reverse.svg`;
+    static getMode() {
+        let mode;
+        if (localStorage.getItem('mode') === null) {
+            mode = [];
         } else {
-            add.src = `/icons/add2.svg`
-            reverse.src = `/icons/reverse2.svg`;
+            mode = JSON.parse(localStorage.getItem('mode'));
         }
-
-        buttons.forEach(button => {
-            button.classList.toggle("lightmode-cards");
-        });
-        cards.forEach(card => {
-            card.classList.toggle("lightmode-cards");
-        });
-
+        return mode;
     }
+    static changeColor() {
+   
+            const cards = document.querySelectorAll('.tasks-cards');
+            //setting colors
+            document.body.classList.toggle("lightmode");
+            container.classList.toggle("lightmode");
+            date.classList.toggle("lightmode-colors");
+            clear.classList.toggle("lightmode-cards");
+            header.classList.toggle("lightmode-colors");
     
+
+            //condition for buttons svg's
+            if (container.classList.contains('lightmode')) {
+                add.src = `/icons/add.svg`
+                reverse.src = `/icons/reverse.svg`;
+            } else {
+                add.src = `/icons/add2.svg`
+                reverse.src = `/icons/reverse2.svg`;
+            }
+    
+            buttons.forEach(button => {
+                button.classList.toggle("lightmode-cards");
+            });
+            cards.forEach(card => {
+                card.classList.toggle("lightmode-cards");
+            });
+
+
+       
+    }
+
     static taskDone(e) {
 
         const done = e.target.parentElement.parentElement;

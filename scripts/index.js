@@ -1,4 +1,3 @@
-
 const add = document.querySelector('#add-button');
 const form = document.querySelector('.form');
 const cancel = document.querySelector('#cancel-button');
@@ -13,27 +12,41 @@ const date = document.querySelector('.date-now');
 const currentTime = document.querySelector('#currentTime');
 const container = document.querySelector('.container');
 
-
 //UI.updateTask(3);
 //Page will display if there is an existing Task.
 window.addEventListener('DOMContentLoaded', UI.displayTask);
-window.addEventListener('DOMContentLoaded', ()=> {
+window.addEventListener('DOMContentLoaded', () => {
+    let mode = UI.getMode();
+    let value = true;
+    if (value === mode) {
+        UI.changeColor();
+    } 
+
+});
+window.addEventListener('DOMContentLoaded', () => {
 
     setInterval(() => {
         UI.getCurrentDate();
-        var now = new Date(); 
+        var now = new Date();
 
-    },1000);
+    }, 1000);
 });
 
-
+function valueChanger(x) {
+    return !x;
+}
 // Event Listeners
 add.addEventListener('click', UI.showTask);
 cancel.addEventListener('click', () => form.style.display = 'none');
 save.addEventListener('click', UI.submitTask);
 clear.addEventListener('click', Storage.clearFields);
-reverse.addEventListener('click', UI.toggle)
-switchButton.addEventListener('click', UI.changeColor);
+reverse.addEventListener('click', UI.toggle);
+switchButton.addEventListener('click', () => {
+    let mode = UI.getMode();
+    let value = valueChanger(mode);
+    localStorage.setItem('mode', JSON.stringify(value));
+    UI.changeColor();
+});
 
 
 
@@ -72,7 +85,7 @@ window.addEventListener('click', function (e) {
             task.forEach(function (tasks, index) {
                 if (tasks.taskID === delIndex) {
                     task.splice(index, 1);
-                        UI.taskDone(e);
+                    UI.taskDone(e);
                 }
             });
             localStorage.setItem('tasks', JSON.stringify(task));
