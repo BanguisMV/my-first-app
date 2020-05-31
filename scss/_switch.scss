@@ -21,7 +21,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--color2);
+    background-color: var(--color3);
     -webkit-transition: .4s;
     transition: .4s;
 
@@ -47,7 +47,7 @@
 }
 
 input:checked+.slider {
-    background-color: var(--color3);
+    background-color: var(--color2);
 }
 
 input:focus+.slider {

@@ -1,3 +1,4 @@
+
 const add = document.querySelector('#add-button');
 const form = document.querySelector('.form');
 const cancel = document.querySelector('#cancel-button');
@@ -9,13 +10,21 @@ const switchButton = document.querySelector('#switch-button');
 const buttons = document.querySelectorAll('.button-svg');
 const header = document.querySelector('.header');
 const date = document.querySelector('.date-now');
+const currentTime = document.querySelector('#currentTime');
 const container = document.querySelector('.container');
 
 
-
+//UI.updateTask(3);
 //Page will display if there is an existing Task.
 window.addEventListener('DOMContentLoaded', UI.displayTask);
-window.addEventListener('DOMContentLoaded', UI.getCurrentDate());
+window.addEventListener('DOMContentLoaded', ()=> {
+
+    setInterval(() => {
+        UI.getCurrentDate();
+        var now = new Date(); 
+
+    },1000);
+});
 
 
 // Event Listeners
@@ -25,10 +34,6 @@ save.addEventListener('click', UI.submitTask);
 clear.addEventListener('click', Storage.clearFields);
 reverse.addEventListener('click', UI.toggle)
 switchButton.addEventListener('click', UI.changeColor);
-
-
-
-
 
 
 
@@ -46,7 +51,8 @@ window.addEventListener('click', function (e) {
             task.forEach(function (tasks, index) {
                 if (tasks.taskID === delIndex) {
                     task.splice(index, 1);
-                    e.target.parentElement.parentElement.remove();
+                    UI.taskDone(e);
+                    //e.target.parentElement.parentElement.remove();
                 }
             });
             localStorage.setItem('tasks', JSON.stringify(task));
@@ -66,7 +72,7 @@ window.addEventListener('click', function (e) {
             task.forEach(function (tasks, index) {
                 if (tasks.taskID === delIndex) {
                     task.splice(index, 1);
-                    e.target.parentElement.parentElement.remove();
+                        UI.taskDone(e);
                 }
             });
             localStorage.setItem('tasks', JSON.stringify(task));

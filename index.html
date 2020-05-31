@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Ruluko&display=swap" rel="stylesheet" />
 </head>
 
+
 <body>
   <div class="date-switch">
 
@@ -17,6 +18,7 @@
       <h1 id="currentDate" class="date-now-header">
 
       </h1>
+      <h1 id="currentTime" class="date-now-header"> </h1>
     </div>
 
     <div class="switch-button">
@@ -29,26 +31,6 @@
   </div>
 
   <div class="container">
-
-    <section class="header">
-      <h1>Weekly Todos</h1>
-      <div class="header-buttons">
-        <img src="/icons/add2.svg" alt="" srcset="" id="add-button" class="header-buttons-add button-svg" />
-        <img src="/icons/reverse2.svg" alt="" srcset="" id="reverse-button" class="header-buttons-reverse button-svg" />
-
-      </div>
-    </section>
-
-    <section class="tasks" id="cards">
-      <h1 class="taskList">Task is Empty!</h1>
-    </section>
-
-    <section class="clear" id="clear">
-      <div class="clear-button">
-        <img src="/icons/sweep1.svg" alt="" id="clear-button" />
-      </div>
-    </section>
-
     <div class="form overlay">
       <h3 class="custom-select-title">Title</h3>
       <input type="text" class="form-input" placeholder="Task" id="task" />
@@ -74,7 +56,31 @@
         </button>
       </div>
     </div>
+
+    <section class="header">
+      <h1>Weekly Todos</h1>
+      <div class="header-buttons">
+        <img src="/icons/add2.svg" alt="" srcset="" id="add-button" class="header-buttons-add button-svg" />
+        <img src="/icons/reverse2.svg" alt="" srcset="" id="reverse-button" class="header-buttons-reverse button-svg" />
+
+      </div>
+    </section>
+
+    <section class="tasks" id="cards">
+      <h1 class="taskList">Task is Empty!</h1>
+    </section>
+
+    <section class="clear" id="clear">
+      <div class="clear-button">
+        <img src="/icons/sweep1.svg" alt="" id="clear-button" />
+      </div>
+    </section>
+
+
+
   </div>
+  <script src="/scripts/ui.js"></script>
+  <script src="/scripts/task.js"></script>
   <script src="/scripts/storage.js"></script>
   <script src="/scripts/index.js"></script>
 </body>

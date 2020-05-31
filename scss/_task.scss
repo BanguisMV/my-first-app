@@ -57,6 +57,8 @@
     align-items: center;
 
     &-cards {
+
+
         width: 50rem;
         height: 10.5rem;
         background-color: var(--color2);
@@ -71,7 +73,8 @@
         transition: all .5s ease-in-out;
 
         &:hover {
-            animation: shake .5s;
+            opacity: 1.5;
+            transform: translateY(-.5rem);
         }
 
         &-number {
@@ -93,7 +96,7 @@
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 overflow: hidden;
-                width:15rem;
+                width: 15rem;
 
                 font-size: 2rem;
             }
@@ -118,8 +121,8 @@
             flex-direction: column;
             display: flex;
             margin: 1rem 0;
-            
-      
+
+
         }
 
 
