@@ -6,5 +6,5 @@ Maybe next time i'll use some modern approach.
 https://myweeklytodos.netlify.app
 
 # Tablet View
-![Tablet View]
-(https://github.com/MarkVergelBanguis/my-first-app/blob/master/Screenshot_2020-07-27-20-11-41.png)
+![Tablet View]   
+(https://github.com/MarkVergelBanguis/my-first-app/blob/master/Tablet.png)
