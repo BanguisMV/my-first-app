@@ -6,5 +6,4 @@ Maybe next time i'll use some modern approach.
 https://todos.banguismv.wtf/
 
 # Tablet View
-![Tablet View]   
-(https://github.com/MarkVergelBanguis/my-first-app/blob/master/Tablet.png)
+![Tablet View](https://github.com/MarkVergelBanguis/my-first-app/blob/master/Tablet.png)
