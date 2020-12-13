@@ -5,5 +5,8 @@ Maybe next time i'll use some modern approach.
 # View it live <br />
 https://todos.banguismv.wtf/
 
+# Desktop View
+![Tablet View](https://github.com/BanguisMV/my-first-app/blob/master/pre3.JPG?raw=true)
+
 # Tablet View
 ![Tablet View](https://github.com/MarkVergelBanguis/my-first-app/blob/master/Tablet.png)
